@@ -57,6 +57,7 @@ const loginUser = asyncHandler(async (req, res) => {
 				if (isPasswordCorrect) {
 					// Login user
 					req.session.loggedin = true;
+					req.session.userId = result[0].id;
 					req.session.username = result[0].username;
 
 					res.send('Logged in successfully!');
