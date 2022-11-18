@@ -9,6 +9,6 @@
 
 ## API docs
 
-- `POST /user/register`: register a new user
-- `POST /user/login`: login
-- `POST /user/logout`: logout
+- `POST /auth/register`: register a new user
+- `POST /auth/login`: login
+- `POST /auth/logout`: logout

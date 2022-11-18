@@ -4,7 +4,7 @@ import 'dotenv/config';
 import cors from 'cors';
 import http from 'http';
 import path from 'path';
-import userRoutes from './routes/userRoutes.js';
+import authRoutes from './routes/authRoutes.js';
 
 const PORT = process.env.PORT || 8000;
 
@@ -25,6 +25,6 @@ app.use(
 app.use(express.json()); // to accept json data
 
 // TODO: Add routes
-app.use('/user', userRoutes);
+app.use('/auth', authRoutes);
 
 server.listen(PORT, console.log(`Server listening on port ${PORT}...`));
