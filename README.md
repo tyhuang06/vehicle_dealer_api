@@ -9,6 +9,31 @@
 
 ## API docs
 
+Users - are customers
+
 - `POST /auth/register`: register a new user
 - `POST /auth/login`: login
 - `POST /auth/logout`: logout
+
+Vehicles
+
+- `GET /vehicle`: get all vehicles
+- `GET /vehicle/:type`: get vehicles filtered by type
+- `GET /vehicle/:brand`: get vehicles filtered by brand
+- `GET /vehicle/:id`: get single vehicle
+
+Orders - req user access
+
+- `POST /order`: Create a new order
+- `GET /order`: get all orders
+- `GET /order/:id`: get single order
+- `PUT /order/:id`: update order
+- `DELETE /order/:id`: delete order
+
+Reservations (test drive) - req user access
+
+- `POST /reservation`: Create a new reservation
+- `GET /reservation`: get all reservations
+- `GET /reservation/:id`: get a single reservation
+- `PUT /reservation/:id`: update reservation
+- `DELETE /reservation/:id`: delete reservation
