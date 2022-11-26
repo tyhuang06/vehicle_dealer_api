@@ -21,6 +21,7 @@ TODO: Vehicles
 - `GET /vehicle/:type`: get vehicles filtered by type
 - `GET /vehicle/:brand`: get vehicles filtered by brand
 - `GET /vehicle/:id`: get single vehicle
+- Maybe add more filters?
 
 Orders - req user access #done
 
@@ -30,7 +31,7 @@ Orders - req user access #done
 - `PUT /order/:id`: update order
 - `DELETE /order/:id`: delete order
 
-TODO: Reservations (test drive) - req user access
+Reservations (test drive) - req user access #done
 
 - `POST /reservation`: Create a new reservation
 - `GET /reservation`: get all reservations
