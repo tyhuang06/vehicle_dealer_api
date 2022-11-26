@@ -22,7 +22,7 @@ TODO: Vehicles
 - `GET /vehicle/:brand`: get vehicles filtered by brand
 - `GET /vehicle/:id`: get single vehicle
 
-TODO: Orders - req user access
+Orders - req user access #done
 
 - `POST /order`: Create a new order
 - `GET /order`: get all orders
