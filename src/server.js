@@ -14,7 +14,13 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 const server = http.createServer(app);
 
-// TODO: Enable CORS (for frontend development)
+// Enable CORS (for frontend development)
+app.use(
+	cors({
+		origin: process.env.CLIENT_URL,
+		credentials: true,
+	})
+);
 
 // Enable session management
 // Should change to JWT token in the future
