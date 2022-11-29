@@ -6,32 +6,42 @@ import connection from '../config/db.js';
 // @route   POST /auth/register
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
-	const { username, email, password, firstName, lastName } = req.body;
+	const { email, password, firstName, lastName } = req.body;
 
 	// Check if user already exists
 	connection.query(
 		`SELECT * FROM customer WHERE email = '${email}'`,
-		(err, result) => {
+		async (err, result) => {
 			if (err) throw err;
+
 			if (result.length > 0) {
-				res.status(400);
-				throw new Error('User already exists');
+				res.status(401);
+				res.send('User already exists');
 			}
-		}
-	);
 
-	// Encrypt password
-	const salt = await bcrypt.genSalt(10);
-	const encryptedPassword = await bcrypt.hash(password, salt);
+			if (result.length === 0) {
+				// Encrypt password
+				const salt = await bcrypt.genSalt(10);
+				const encryptedPassword = await bcrypt.hash(password, salt);
 
-	// Insert user into database
-	connection.query(
-		`INSERT INTO customer (username, email, password, first_name, last_name) 
-        VALUES ('${username}', '${email}', '${encryptedPassword}', '${firstName}', '${lastName}')`,
-		(err, result) => {
-			if (err) throw err;
-			console.log('User registered successfully!');
-			res.send(result);
+				// Insert user into database
+				connection.query(
+					`INSERT INTO customer (email, password, first_name, last_name) 
+					VALUES ('${email}', '${encryptedPassword}', '${firstName}', '${lastName}')`,
+					(err, result) => {
+						if (err) throw err;
+						console.log('User registered successfully!');
+
+						connection.query(
+							`SELECT * FROM customer WHERE email = '${email}'`,
+							(err, result) => {
+								if (err) throw err;
+								res.send(result[0]);
+							}
+						);
+					}
+				);
+			}
 		}
 	);
 });
