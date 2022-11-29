@@ -65,6 +65,9 @@ const loginUser = asyncHandler(async (req, res) => {
 					res.status(401);
 					res.send('Incorrect password');
 				}
+			} else {
+				res.status(401);
+				res.send('User does not exist');
 			}
 		}
 	);
