@@ -7,6 +7,7 @@ import path from 'path';
 import authRoutes from './routes/authRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import reservationRoutes from './routes/reservationRoutes.js';
+import vehicleRoutes from './routes/vehicleRoutes.js';
 
 const PORT = process.env.PORT || 8000;
 
@@ -30,5 +31,6 @@ app.use(express.json()); // to accept json data
 app.use('/auth', authRoutes);
 app.use('/order', orderRoutes);
 app.use('/reservation', reservationRoutes);
+app.use('/vehicle', vehicleRoutes);
 
 server.listen(PORT, console.log(`Server listening on port ${PORT}...`));

@@ -15,13 +15,19 @@ Users - are customers # done
 - `POST /auth/login`: login
 - `POST /auth/logout`: logout
 
-TODO: Vehicles
+Vehicles - req user access #done
 
 - `GET /vehicle`: get all vehicles
 - `GET /vehicle/:type`: get vehicles filtered by type
 - `GET /vehicle/:brand`: get vehicles filtered by brand
 - `GET /vehicle/:id`: get single vehicle
-- Maybe add more filters?
+- `GET /vehicle/electric`: Get all electric vehicles
+- `GET /vehicle/newVehicle`: Get all new vehicles
+- `GET /vehicle/usedVehicle`: Get all used vehicles
+- `GET /vehicle/year`: Get all vehicles after specific year
+- `GET /vehicle/color`: Get vehicle by color
+- `GET /vehicle/price`: Get vehicle by price, bewteen minprice and maxprice
+
 
 Orders - req user access #done
 
