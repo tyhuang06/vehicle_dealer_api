@@ -23,13 +23,11 @@ const getOrder = asyncHandler(async (req, res) => {
 	const userId = req.session.userId;
 	const orderId = req.params.id;
 
-	// TODO: Return more order details
-
 	connection.query(
 		`SELECT * FROM vehicle_order WHERE customer_id = '${userId}' AND order_id = '${orderId}'`,
 		(err, result) => {
 			if (err) throw err;
-			res.send(result);
+			res.send(result[0]);
 		}
 	);
 });
