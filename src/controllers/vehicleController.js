@@ -12,7 +12,7 @@ const getAllVehicles = asyncHandler(async (req, res) => {
 });
 
 // @desc    Get vehicle by type
-// @route   Get /vehicle/:type
+// @route   Get /vehicle/type/:type
 // @access  Private
 const getVehicleByType = asyncHandler(async (req, res) => {
 	const type = req.params.id;
@@ -26,7 +26,7 @@ const getVehicleByType = asyncHandler(async (req, res) => {
 });
 
 // @desc    Get vehicle by brand
-// @route   Get /vehicle/:brand
+// @route   Get /vehicle/brand/:brand
 // @access  Private
 const getVehicleByBrand = asyncHandler(async (req, res) => {
 	const brand = req.params.id;

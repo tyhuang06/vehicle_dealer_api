@@ -10,8 +10,8 @@ const router = express.Router();
 
 router.route('/').get(protect, getAllVehicles);
 router.route('/:id').get(protect, getVehicleById);
-router.route('/:type').get(protect, getVehicleByType);
-router.route('/:brand').get(protect, getVehicleByBrand);
+router.route('/type/:type').get(protect, getVehicleByType);
+router.route('/brand/:brand').get(protect, getVehicleByBrand);
 router.route('/electric').get(protect, getElectricVehicle);
 router.route('/newVehicle').get(protect, getNewVehicle);
 router.route('/usedVehicle').get(protect, getUsedVehicle);

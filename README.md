@@ -18,8 +18,8 @@ Users - are customers # done
 Vehicles - req user access #done
 
 - `GET /vehicle`: get all vehicles
-- `GET /vehicle/:type`: get vehicles filtered by type
-- `GET /vehicle/:brand`: get vehicles filtered by brand
+- `GET /vehicle/type/:type`: get vehicles filtered by type
+- `GET /vehicle/brand/:brand`: get vehicles filtered by brand
 - `GET /vehicle/:id`: get single vehicle
 - `GET /vehicle/electric`: Get all electric vehicles
 - `GET /vehicle/newVehicle`: Get all new vehicles
