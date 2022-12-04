@@ -28,7 +28,7 @@ const getReservation = asyncHandler(async (req, res) => {
 		`SELECT * FROM appointment WHERE customer_id = '${userId}' AND app_id = '${reservationId}'`,
 		(err, result) => {
 			if (err) throw err;
-			res.send(result);
+			res.send(result[0]);
 		}
 	);
 });
