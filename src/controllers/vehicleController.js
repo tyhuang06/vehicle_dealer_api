@@ -15,7 +15,7 @@ const getAllVehicles = asyncHandler(async (req, res) => {
 // @route   Get /vehicle/type/:type
 // @access  Private
 const getVehicleByType = asyncHandler(async (req, res) => {
-	const type = req.params.id;
+	const type = req.params.type;
 	connection.query(
 		`select * from vehicle where type = '${type}'`,
 		(err, result) => {
@@ -29,7 +29,7 @@ const getVehicleByType = asyncHandler(async (req, res) => {
 // @route   Get /vehicle/brand/:brand
 // @access  Private
 const getVehicleByBrand = asyncHandler(async (req, res) => {
-	const brand = req.params.id;
+	const brand = req.params.brand;
 	connection.query(
 		`select * from vehicle where brand = '${brand}' `,
 		(err, result) => {
@@ -107,12 +107,13 @@ const getVehicleAfterYear = asyncHandler(async (req, res) => {
 });
 
 // @desc    Get vehicle by color
-// @route   Get /vehicle/color
+// @route   Get /vehicle/color/:color
 // @access  Private
 const getVehicleByColor = asyncHandler(async (req, res) => {
-	const { color } = req.body;
+    // const vin = req.params.id;
+	const color  = req.params.color;
 	connection.query(
-		`select * from vehicle where color = '${color}`,
+		`select * from vehicle where color = '${color}'`,
 		(err, result) => {
 			if (err) throw err;
 			res.send(result);

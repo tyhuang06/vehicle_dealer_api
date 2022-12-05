@@ -25,7 +25,7 @@ Vehicles - req user access #done
 - `GET /vehicle/newVehicle`: Get all new vehicles
 - `GET /vehicle/usedVehicle`: Get all used vehicles
 - `GET /vehicle/year`: Get all vehicles after specific year
-- `GET /vehicle/color`: Get vehicle by color
+- `GET /vehicle/color/:color`: Get vehicle by color
 - `GET /vehicle/price`: Get vehicle by price, bewteen minprice and maxprice
 
 
